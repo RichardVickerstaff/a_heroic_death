@@ -1,40 +1,10 @@
 <body>
   <div class='locked_wrapper'>
-    <h1>
-      Countdown clock?
-    </h1>
+    <%= partial 'countdown_clock' %>
   </div>
 
   <div class='locked_wrapper'>
-    <div class="keypadwrapper">
-      <div class="inputwrapper">
-        <span class="numberinput"></span>
-        <span class="numberinput"></span>
-        <span class="numberinput"></span>
-        <span class="numberinput"></span>
-      </div>
-      <div class="keypad">
-        <div class="numberline">
-          <%= partial 'keypad_button', locals: { number: '1' } %>
-          <%= partial 'keypad_button', locals: { number: '4' } %>
-          <%= partial 'keypad_button', locals: { number: '7' } %>
-          <%= partial 'keypad_button', locals: { number: '<', underscore: true } %>
-        </div>
-        <div class="numberline">
-          <%= partial 'keypad_button', locals: { number: '2' } %>
-          <%= partial 'keypad_button', locals: { number: '5' } %>
-          <%= partial 'keypad_button', locals: { number: '8' } %>
-          <%= partial 'keypad_button', locals: { number: '0', underscore: true } %>
-        </div>
-        <div class="numberline">
-          <%= partial 'keypad_button', locals: { number: '3' } %>
-          <%= partial 'keypad_button', locals: { number: '6' } %>
-          <%= partial 'keypad_button', locals: { number: '9' } %>
-          <%= partial 'keypad_button', locals: { number: '*', underscore: true } %>
-        </div>
-      </div>
-    </div>
-    <a href="#" id="button" class="btn-big-red">Unlock!</a>
+    <%= partial 'keypad' %>
   </div>
 
   <div class='unlocked_wrapper hidden'>

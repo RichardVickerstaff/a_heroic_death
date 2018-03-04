@@ -2,6 +2,7 @@
 @import "compass/css3";
 @import "button";
 @import "keypad";
+@import "countdown_clock";
 
 html, body { 
   margin: 0;
@@ -24,6 +25,11 @@ html, body {
 
   .unlocked_wrapper {
     width: 100%;
+  }
+
+  .flex_col {
+    display: flex;
+    flex-direction: column;
   }
 
   .hidden {
