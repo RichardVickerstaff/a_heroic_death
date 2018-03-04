@@ -22,3 +22,10 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.commit_message = "Deployed by #{`whoami`} on #{Time.now.utc}"
 end
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :asset_hash
+  activate :asset_host, host: '//richardvickerstaff.github.io/a_heroic_death'
+end
