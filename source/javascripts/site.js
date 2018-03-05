@@ -2,6 +2,10 @@
 
 $(function () {
   var pin = [];
+  var timeInMinutes = 240;
+  var currentTime = Date.parse(new Date());
+  var deadline = new Date(currentTime + timeInMinutes*60*1000);
+
   $(".content").click(function () {
 
     var value = $(this).find(".number").text();
@@ -45,15 +49,19 @@ $(function () {
         $(this).removeClass("nocircle");
         pin = [];
       });
+      var new_deadline = deadline - 30*60*1000;
+      console.log(new_deadline);
+      console.log(Math.max(0, new_deadline));
+      deadline = new Date(Math.max(0, new_deadline));
     }
   });
 
-  function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  function getTimeRemaining() {
+    var t = Date.parse(deadline) - Date.parse(new Date());
+    var seconds = Math.max(0, Math.floor((t / 1000) % 60));
+    var minutes = Math.max(0, Math.floor((t / 1000 / 60) % 60));
+    var hours = Math.max(0, Math.floor((t / (1000 * 60 * 60)) % 24));
+    var days = Math.max(0, Math.floor(t / (1000 * 60 * 60 * 24)));
     return {
       'total': t,
       'days': days,
@@ -63,7 +71,7 @@ $(function () {
     };
   }
 
-  function initializeClock(id, endtime) {
+  function initializeClock(id) {
     var clock = document.getElementById(id);
     var daysSpan = clock.querySelector('.days');
     var hoursSpan = clock.querySelector('.hours');
@@ -71,7 +79,7 @@ $(function () {
     var secondsSpan = clock.querySelector('.seconds');
 
     function updateClock() {
-      var t = getTimeRemaining(endtime);
+      var t = getTimeRemaining(deadline);
 
       daysSpan.innerHTML = t.days;
       hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
@@ -87,8 +95,5 @@ $(function () {
     var timeinterval = setInterval(updateClock, 1000);
   }
 
-  var timeInMinutes = 240;
-  var currentTime = Date.parse(new Date());
-  var deadline = new Date(currentTime + timeInMinutes*60*1000);
-  initializeClock('clockdiv', deadline);
+  initializeClock('clockdiv');
 });
