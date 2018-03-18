@@ -30,23 +30,29 @@ $(function () {
     }
   });
 
+  var reset = function() {
+    $($(".numberinput").get().reverse()).each(function () {
+      $(this).text("");
+      $(this).removeClass("nocircle");
+      pin = [];
+    });
+  };
 
 
   $("#button").click(function () {
-    if( pin.toString() == ["1", "2", "3", "4"].toString() ) {
-      $(".locked_wrapper").each(function () {
-        $(this).addClass('hidden');
-      });
-      $(".unlocked_wrapper").each(function () {
-        $(this).removeClass('hidden');
-      });
-    } else {
-      $($(".numberinput").get().reverse()).each(function () {
-        $(this).text("");
-        $(this).removeClass("nocircle");
-        pin = [];
-      });
-    }
+    $.ajax({
+      type: "POST",
+      url: "/api",
+      data: JSON.stringify(pin),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function(){
+        reset();},
+      failure: function(){
+        reset();},
+      error: function(){
+        reset();}
+    });
   });
 
 });
