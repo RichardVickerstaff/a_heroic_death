@@ -1,10 +1,52 @@
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+import $ from 'jquery'
 
-console.log('Hello World from Webpacker')
+$(function () {
+  var pin = [];
+
+  $(".content").click(function () {
+
+    var value = $(this).find(".number").text();
+
+    if (value !== "<") {
+      $(".numberinput").each(function () {
+        var a = $(this).text();
+        if (!a) {
+          $(this).text(value);
+          $(this).addClass("nocircle");
+          pin.push(value);
+          return false;
+        }
+      });
+    } else {
+      $($(".numberinput").get().reverse()).each(function () {
+        var a = $(this).text();
+        if (a) {
+          $(this).text("");
+          $(this).removeClass("nocircle");
+          pin.pop();
+          return false;
+        }
+      });
+    }
+  });
+
+
+
+  $("#button").click(function () {
+    if( pin.toString() == ["1", "2", "3", "4"].toString() ) {
+      $(".locked_wrapper").each(function () {
+        $(this).addClass('hidden');
+      });
+      $(".unlocked_wrapper").each(function () {
+        $(this).removeClass('hidden');
+      });
+    } else {
+      $($(".numberinput").get().reverse()).each(function () {
+        $(this).text("");
+        $(this).removeClass("nocircle");
+        pin = [];
+      });
+    }
+  });
+
+});

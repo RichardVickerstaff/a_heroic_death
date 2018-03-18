@@ -1,0 +1,33 @@
+html, body { 
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: 'Open Sans', sans serif; font-weight: 300;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+
+  h1 {
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .locked_wrapper {
+    width: 50%;
+  }
+
+  .unlocked_wrapper {
+    width: 100%;
+  }
+
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+}

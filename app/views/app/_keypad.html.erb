@@ -1,0 +1,29 @@
+<div class="keypadwrapper">
+  <div class="inputwrapper">
+    <span class="numberinput"></span>
+    <span class="numberinput"></span>
+    <span class="numberinput"></span>
+    <span class="numberinput"></span>
+  </div>
+  <div class="keypad">
+    <div class="numberline">
+      <%= render 'keypad_button', number: '1' %>
+      <%= render 'keypad_button', number: '4' %>
+      <%= render 'keypad_button', number: '7' %>
+      <%= render 'keypad_button', number: '<', underscore: true %>
+    </div>
+    <div class="numberline">
+      <%= render 'keypad_button', number: '2' %>
+      <%= render 'keypad_button', number: '5' %>
+      <%= render 'keypad_button', number: '8' %>
+      <%= render 'keypad_button', number: '0', underscore: true %>
+    </div>
+    <div class="numberline">
+      <%= render 'keypad_button', number: '3' %>
+      <%= render 'keypad_button', number: '6' %>
+      <%= render 'keypad_button', number: '9' %>
+      <%= render 'keypad_button',  number: '*', underscore: true %>
+    </div>
+  </div>
+</div>
+<a href="#" id="button" class="btn-big-red">Unlock!</a>
