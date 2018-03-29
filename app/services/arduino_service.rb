@@ -18,11 +18,25 @@ class ArduinoService
     end
   end
 
-  def leds
-    board = Dino::Board.new(@serial)
-    @leds = {}
-    (2..17).each do |number|
-      @leds[number] = Dino::Components::Led.new(pin: number, board: board)
+  def toggle_led number
+    led = leds[number]
+    on = led[:on]
+    if on
+      led[:led].off
+      led[:on] = false
+    else
+      led[:led].on
+      led[:on] = true
+    end
+  end
+
+  private def leds
+    if @leds.nil?
+      board = Dino::Board.new(@serial)
+      @leds = {}
+      (2..17).each do |number|
+        @leds[number] = { led: Dino::Components::Led.new(pin: number, board: board), on: false }
+      end
     end
     @leds
   end
