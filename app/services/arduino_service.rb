@@ -5,11 +5,12 @@ class ArduinoService
   include Singleton
 
   def initialize
-    @serial = Dino::TxRx::Serial.new(baud: 9600)
+    @serial = Dino::TxRx::Serial.new(baud: 115200)
 
-    while @board.nil?
+    board = nil
+    while board.nil?
       begin
-        @board = Dino::Board.new(@serial)
+        board = Dino::Board.new(@serial)
       rescue Dino::BoardNotFound
         puts 'Reload board'
         sleep 5
@@ -18,9 +19,10 @@ class ArduinoService
   end
 
   def leds
+    board = Dino::Board.new(@serial)
     @leds = {}
     (2..17).each do |number|
-      @leds[number] = Dino::Components::Led.new(pin: number, board: @board)
+      @leds[number] = Dino::Components::Led.new(pin: number, board: board)
     end
     @leds
   end
