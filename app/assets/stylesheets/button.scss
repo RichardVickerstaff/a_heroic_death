@@ -23,18 +23,18 @@
   0 8px 8px 1px rgba(black, 0.5);
   color: #FFF;
   font-family: "Lucida Grande", Arial, sans-serif;
-  font-size: 22px;
+  font-size: 2em;
   font-weight: bold;
-  height: 61px;
+  height: 122px;
   letter-spacing: -1px;
-  line-height: 61px;
-  margin-top: 30px;
+  line-height: 133px;
+  margin-top: 50px;
   position: relative;
   text-align: center;
   text-shadow: 0 1px 1px rgba(black, 0.5);
   text-decoration: none !important;
   top: 0;
-  width: 186px;
+  width: 300px;
   @include transition(0.15s);
   &:hover, &:focus {
     background-color: #D13902;
