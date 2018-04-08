@@ -7,7 +7,7 @@ void writeResponse(char *response) { Serial.print(response); Serial.print("\n");
 void (*writeCallback)(char *str) = writeResponse;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   dino.setupWrite(writeCallback);
 }
 

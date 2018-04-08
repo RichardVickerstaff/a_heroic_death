@@ -5,7 +5,7 @@ class ArduinoService
   include Singleton
 
   def initialize
-    @serial = Dino::TxRx::Serial.new(baud: 115200)
+    @serial = Dino::TxRx::Serial.new(baud: 9600)
 
     board = nil
     while board.nil?
