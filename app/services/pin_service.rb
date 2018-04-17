@@ -19,7 +19,13 @@ class PinService
     return false unless @selected_pin
 
     save_pin_state
-    # ArduinoService.instance.set_led selected_pin[:output], set_to
+    ArduinoService.instance.set_led @selected_pin[:output], @selected_pin[:state]
+  end
+
+  def reset_all_pins
+    @pins.each do |pin|
+      ArduinoService.instance.set_led pin[:output], pin[:state]
+    end
   end
 
   private def save_pin_state

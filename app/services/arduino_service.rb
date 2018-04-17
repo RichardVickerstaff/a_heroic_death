@@ -18,15 +18,12 @@ class ArduinoService
     end
   end
 
-  def toggle_led number
+  def set_led number, state
     led = leds[number]
-    on = led[:on]
-    if on
+    if state
       led[:led].off
-      led[:on] = false
     else
       led[:led].on
-      led[:on] = true
     end
   end
 
@@ -35,7 +32,7 @@ class ArduinoService
       board = Dino::Board.new(@serial)
       @leds = {}
       (2..17).each do |number|
-        @leds[number] = { led: Dino::Components::Led.new(pin: number, board: board), on: false }
+        @leds[number] = { led: Dino::Components::Led.new(pin: number, board: board) }
       end
     end
     @leds

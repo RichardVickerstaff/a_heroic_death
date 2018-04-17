@@ -2,7 +2,12 @@ class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    update_pin = PinService.new.toggle_pin_for pin_code
+    if pin_code == '0000'
+      PinService.new.reset_all_pins
+      update_pin = true
+    else
+      update_pin = PinService.new.toggle_pin_for pin_code
+    end
 
     if update_pin
       return render json: {}, status: 202
