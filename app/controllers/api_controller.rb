@@ -6,7 +6,7 @@ class ApiController < ApplicationController
       PinService.new.reset_all_pins
       update_pin = true
     else
-      update_pin = PinService.new.toggle_pin_for pin_code
+      update_pin = PinService.new.toggle_for pin_code
     end
 
     if update_pin

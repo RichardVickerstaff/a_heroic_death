@@ -1,0 +1,12 @@
+<div class='led_container'>
+  <div class='led_switchs'>
+    <% PinService.new.pins.each do |pin| %>
+      <div class='led_switch'>
+        <%= form_tag("/admin", method: "post") do %>
+          <input name="pin_code" type="hidden" value="<%= pin[:pin] %>" />
+          <input class="button <%= pin[:state] ? 'btn-on' : 'btn-off' %>" type="submit" value="<%= "LED: #{pin[:output]}" %>">
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

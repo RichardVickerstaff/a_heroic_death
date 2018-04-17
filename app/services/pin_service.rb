@@ -2,6 +2,8 @@ require 'csv'
 
 class PinService
 
+  attr_reader :pins
+
   def initialize
     @pins = []
     @path = Rails.root.join('pins.csv')
@@ -36,7 +38,6 @@ class PinService
       end
     end
     File.write(@path, csv)
-    puts csv
   end
 
   private def to_bool value
