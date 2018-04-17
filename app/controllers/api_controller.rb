@@ -2,10 +2,9 @@ class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    output = PinService.new.for pin_code
+    update_pin = PinService.new.toggle_pin_for pin_code
 
-    if output
-      ArduinoService.instance.toggle_led output
+    if update_pin
       return render json: {}, status: 202
     else
       puts "ERROR"
