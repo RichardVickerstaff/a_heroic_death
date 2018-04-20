@@ -1,0 +1,222 @@
+/* line 1, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: 'Open Sans', sans serif;
+  font-weight: 300;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  width: 100%;
+}
+/* line 12, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html h1, body h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+/* line 17, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html .locked_wrapper, body .locked_wrapper {
+  width: 50%;
+}
+/* line 21, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html .unlocked_wrapper, body .unlocked_wrapper {
+  width: 100%;
+}
+/* line 25, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html .flex_col, body .flex_col {
+  display: flex;
+  flex-direction: column;
+}
+/* line 30, /Users/richard/projects/personal/arduino/app/assets/stylesheets/background.scss */
+html .hidden, body .hidden {
+  display: none;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+/* line 4, /Users/richard/projects/personal/arduino/app/assets/stylesheets/button.scss */
+.btn-big-red {
+  display: block;
+  margin: auto;
+  background-color: #C63702;
+  background-image: linear-gradient(167deg, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 55%), linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #C63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AD3002, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  font-family: "Lucida Grande", Arial, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  height: 122px;
+  letter-spacing: -1px;
+  line-height: 133px;
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none !important;
+  top: 0;
+  width: 300px;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+/* line 39, /Users/richard/projects/personal/arduino/app/assets/stylesheets/button.scss */
+.btn-big-red:hover, .btn-big-red:focus {
+  background-color: #D13902;
+  box-shadow: 0 0 0 1px #C63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #AD3002, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+  top: -2px;
+}
+/* line 49, /Users/richard/projects/personal/arduino/app/assets/stylesheets/button.scss */
+.btn-big-red:active {
+  box-shadow: 0 0 0 1px #AD3002 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+}
+/* line 1, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.rotate {
+  display: none;
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  margin-left: -200px;
+  margin-top: -25px;
+}
+
+/* line 3, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper {
+  text-align: center;
+  margin-top: 250px;
+}
+/* line 7, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .inputwrapper {
+  margin: 2em;
+  line-height: 0.61em;
+  vertical-align: middle;
+}
+/* line 9, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .numberinput {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+  margin-right: 2%;
+  margin-left: 2%;
+  font-size: 4em;
+}
+/* line 11, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad {
+  display: flex;
+}
+/* line 13, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .numberline {
+  width: 100%;
+}
+/* line 15, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .content {
+  display: inline-block;
+  margin: 8% 8%;
+}
+/* line 18, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .content div {
+  width: 8em;
+  height: 8em;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  border-radius: 70px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 31, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .content div span:nth-child(1) {
+  display: block;
+  font-size: 3.6em;
+  height: 1em;
+  margin-top: 0.4em;
+}
+/* line 32, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .content div span:nth-child(2) {
+  font-size: 0.6em;
+}
+/* line 35, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.keypadwrapper .keypad .content div:hover {
+  background-color: #ffffff;
+  color: #000000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 40, /Users/richard/projects/personal/arduino/app/assets/stylesheets/keypad.scss */
+.nocircle {
+  width: auto !important;
+  border: none !important;
+  height: auto !important;
+}
+/* line 1, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container {
+  margin-top: 10px;
+}
+/* line 4, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container .led_switchs {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+/* line 11, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container .led_switchs .led_switch {
+  margin: 2px;
+}
+/* line 15, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container .led_switchs .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+/* line 26, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container .led_switchs .btn-on {
+  background-color: #4CAF50;
+}
+/* line 30, /Users/richard/projects/personal/arduino/app/assets/stylesheets/led_switches.scss */
+.led_container .led_switchs .btn-off {
+  background-color: #f44336;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
