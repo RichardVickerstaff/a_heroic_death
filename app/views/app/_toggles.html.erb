@@ -9,4 +9,9 @@
       </div>
     <% end %>
   </div>
+
+  <%= form_tag("/admin", method: "post") do %>
+    <input name="pin_code" type="hidden" value="0000" />
+    <input class="button" type="submit" value="Reset arduino">
+  <% end %>
 </div>
